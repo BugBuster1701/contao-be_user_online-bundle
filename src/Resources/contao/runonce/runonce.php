@@ -34,10 +34,51 @@ class BackendUserOnlineRunonceJob extends Controller
 	public function run()
 	{
 	    // Backend User Online Issues #6
-	    $a = $this->Session->get('sorting');
+	    //c3 $a = $this->Session->get('sorting');
+	    //c4 $session = System::getContainer()->get('session');
+	    //c4 $a = $session->get('sorting');
+	    $objSessionBag = System::getContainer()->get('session')->getBag('contao_backend');
+	    $a = $objSessionBag->get('sorting');
+	    $this->logMessage(print_r($a,true),'BackendUserOnlineRunonceJob');
+	    /*
 	    $a['tl_user']   = 'currentLogin DESC';
 	    $a['tl_member'] = 'currentLogin DESC';
-	    $this->Session->set('sorting',$a);
+	    //c3 $this->Session->set('sorting',$a);
+	    //c4 $session->set('sorting',$a);
+	    $objSessionBag->set('sorting', $a);
+	    */
+	}
+	
+	/**
+	 * Wrapper for old log_message
+	 *
+	 * @param string $strMessage
+	 * @param string $strLogg
+	 */
+	public function logMessage($strMessage, $strLog=null)
+	{
+	    if ($strLog === null)
+	    {
+	        $strLog = 'prod-' . date('Y-m-d') . '.log';
+	    }
+	    else
+	    {
+	        $strLog = 'prod-' . date('Y-m-d') . '-' . $strLog . '.log';
+	    }
+	
+	    $strLogsDir = null;
+	
+	    if (($container = System::getContainer()) !== null)
+	    {
+	        $strLogsDir = $container->getParameter('kernel.logs_dir');
+	    }
+	
+	    if (!$strLogsDir)
+	    {
+	        $strLogsDir = TL_ROOT . '/var/logs';
+	    }
+	
+	    error_log(sprintf("[%s] %s\n", date('d-M-Y H:i:s'), $strMessage), 3, $strLogsDir . '/' . $strLog);
 	}
 }
 

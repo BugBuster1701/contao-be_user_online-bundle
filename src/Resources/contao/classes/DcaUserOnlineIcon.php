@@ -25,7 +25,7 @@ namespace BugBuster\BackendUserOnline;
  * @author     Glen Langer (BugBuster)
  * @package    BackendUserOnline
  */
-class DCA_user_onlineicon extends \Backend
+class DcaUserOnlineIcon extends \Backend
 {
     /**
 	 * Add an image to each record
@@ -35,13 +35,15 @@ class DCA_user_onlineicon extends \Backend
 	 * @param array
 	 * @return string
 	 */
-	public function addIcon($row, $label, $dc, $args)
+	public function addIcon($row, $label, \DataContainer $dc, $args)
 	{
 		$image = $row['admin'] ? 'admin' :  'user';
 
-		if ($row['disable'] 
-            || strlen($row['start']) && $row['start'] > time() 
-            || strlen($row['stop'])  && $row['stop']  < time() )
+		$time = \Date::floorToMinute();
+
+		$disabled = $row['start'] !== '' && $row['start'] > $time || $row['stop'] !== '' && $row['stop'] < $time;
+
+		if ($row['disable'] || $disabled)
 		{
 			$image .= '_';
 		}
@@ -59,15 +61,16 @@ class DCA_user_onlineicon extends \Backend
 		if ($objUsers->numRows < 1) 
 		{
 		    //offline
-		    $status = sprintf('<img src="%ssystem/themes/%s/images/invisible.gif" width="16" height="16" alt="Offline" style="padding-left: 18px;">', TL_ASSETS_URL, \Backend::getTheme() );
+		    $status = sprintf('<img src="%ssystem/themes/%s/icons/invisible.svg" width="16" height="16" alt="Offline" style="padding-left: 18px;">', TL_ASSETS_URL, \Backend::getTheme() );
 		} 
 		else 
 		{
 		    //online
-		    $status = sprintf('<img src="%ssystem/themes/%s/images/visible.gif" width="16" height="16" alt="Online" style="padding-left: 18px;">', TL_ASSETS_URL, \Backend::getTheme() );
+		    $status = sprintf('<img src="%ssystem/themes/%s/icons/visible.svg" width="16" height="16" alt="Online" style="padding-left: 18px;">', TL_ASSETS_URL, \Backend::getTheme() );
 		}
 
-		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/images/%s.gif\'); width: 34px;">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $status);
+		//c3 $args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/icons/%s.svg\'); width: 34px;">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $status);
+		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/icons/%s.svg\'); width: 34px;" data-icon="%s.svg" data-icon-disabled="%s.svg">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $disabled ? $image : rtrim($image, '_'), rtrim($image, '_') . '_', $status);
 		return $args;
 	}
 
