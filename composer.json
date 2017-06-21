@@ -40,7 +40,8 @@
 					"src/Resources/contao/config/",
 					"src/Resources/contao/dca/",
 					"src/Resources/contao/languages/",
-					"src/Resources/contao/templates/"
+					"src/Resources/contao/templates/",
+					"src/Resources/contao/runonce/"
 		]
 	},
 	"extra":{
@@ -52,7 +53,7 @@
 					"languages_tx": ".tx"
 				},
 				"runonce":[
-					"src/runonce/runonce.php"
+					"src/Resources/contao/runonce/runonce.php"
 					]
 		},
 		"branch-alias": {
