@@ -1,0 +1,63 @@
+{
+	"name":"bugbuster/contao-be_user_online-bundle",
+	"description":"Contao 4 CMS Online Status Icon for Backend and Frontend User",
+	"keywords":["contao","backend","user","online"],
+	"type":"contao-bundle",
+	"homepage":"http://contao.ninja",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Glen Langer",
+			"homepage":"http://contao.ninja",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/BugBuster1701/contao-be_user_online-bundle/issues",
+		"irc":"irc://irc.freenode.org/contao.dev",
+		"source":"https://github.com/BugBuster1701/contao-be_user_online-bundle",
+		"wiki":"http://de.contaowiki.org/Backend_User_Online",
+		"forum":"https://community.contao.org/de/forumdisplay.php?119-Sonstige-Erweiterungen"
+	},
+	"require":{
+		"php": ">=5.6.0",
+		"contao/core-bundle": "~4.3"
+	},
+	"require-dev": {
+			"contao/manager-plugin": "^2.0"
+	},
+	"conflict": {
+			"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"autoload":{
+			"psr-4": {
+					"BugBuster\\BeUserOnlineBundle\\": "src/"
+		},
+		"classmap": [
+					"src/Resources/contao/"
+		],
+		"exclude-from-classmap": [
+					"src/Resources/contao/config/",
+					"src/Resources/contao/dca/",
+					"src/Resources/contao/languages/",
+					"src/Resources/contao/templates/"
+		]
+	},
+	"extra":{
+		"contao":{
+				"transifex": {
+					"project": "contao-be_user_online-bundle",
+					"prefix": "master-",
+					"languages_cto": "src/Resources/contao/languages",
+					"languages_tx": ".tx"
+				},
+				"runonce":[
+					"runonce/runonce.php"
+					]
+		},
+		"branch-alias": {
+			"dev-develop": "1.1.x-dev"
+		},
+		"contao-manager-plugin": "BugBuster\\BeUserOnlineBundle\\ContaoManager\\Plugin"
+	}
+}
