@@ -24,9 +24,6 @@
  * @package    Banner
  * @license    LGPL
  */
-error_log('Start runonce',3,'/daten/contao4go/contao439me.contaodev/var/logs/beuo.log');
-
-/*
 class BackendUserOnlineRunonceJob extends Controller
 {
 	public function __construct()
@@ -57,7 +54,7 @@ class BackendUserOnlineRunonceJob extends Controller
 	 *
 	 * @param string $strMessage
 	 * @param string $strLogg
-	 *//*
+	 */
 	public function logMessage($strMessage, $strLog=null)
 	{
 	    if ($strLog === null)
@@ -87,4 +84,3 @@ class BackendUserOnlineRunonceJob extends Controller
 
 $objBackendUserOnlineRunonceJob = new BackendUserOnlineRunonceJob();
 $objBackendUserOnlineRunonceJob->run();
-*/
