@@ -1,16 +1,16 @@
 <?php 
 
 /**
- * Contao Open Source CMS, Copyright (C) 2005-2013 Leo Feyer
+ * Contao Open Source CMS, Copyright (C) 2005-2017 Leo Feyer
  *
- * Module Backend User Online - DCA Helper Class DCA_user_onlineicon
+ * Module Backend User Online - DCA Helper Class DcaUserOnlineIcon
  *
- * @copyright  Glen Langer 2012..2013 <http://www.contao.glen-langer.de>
+ * @copyright  Glen Langer 2012..2017 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  * @package    BackendUserOnline 
  * @license    LGPL
  * @filesource
- * @see	       https://github.com/BugBuster1701/backend_user_online  
+ * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle  
  */
 
 /**
@@ -19,9 +19,9 @@
 namespace BugBuster\BackendUserOnline;
 
 /**
- * Class DCA_user_onlineicon 
+ * Class DcaUserOnlineIcon 
  *
- * @copyright  Glen Langer 2012..2013 <http://www.contao.glen-langer.de>
+ * @copyright  Glen Langer 2012..2017 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  * @package    BackendUserOnline
  */
@@ -69,8 +69,8 @@ class DcaUserOnlineIcon extends \Backend
 		    $status = sprintf('<img src="%ssystem/themes/%s/icons/visible.svg" width="16" height="16" alt="Online" style="padding-left: 18px;">', TL_ASSETS_URL, \Backend::getTheme() );
 		}
 
-		//c3 $args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/icons/%s.svg\'); width: 34px;">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $status);
 		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/icons/%s.svg\'); width: 34px;" data-icon="%s.svg" data-icon-disabled="%s.svg">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $disabled ? $image : rtrim($image, '_'), rtrim($image, '_') . '_', $status);
+		
 		return $args;
 	}
 
