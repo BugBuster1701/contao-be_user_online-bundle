@@ -16,5 +16,5 @@
 /**
  * DCA Config, overwrite label_callback
  */
-$GLOBALS['TL_DCA']['tl_user']['list']['label']['label_callback'] = array('BugBuster\BackendUserOnline\DCA_user_onlineicon','addIcon');
+$GLOBALS['TL_DCA']['tl_user']['list']['label']['label_callback'] = array('BugBuster\BackendUserOnline\DcaUserOnlineIcon','addIcon');
 

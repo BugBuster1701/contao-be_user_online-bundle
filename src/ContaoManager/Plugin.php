@@ -3,9 +3,9 @@
 /**
  * @copyright  Glen Langer 2008..2017 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @package    Xing
+ * @package    BeUserOnlineBundle
  * @license    LGPL-3.0+
- * @see	       https://github.com/BugBuster1701/contao-xing-bundle
+ * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle
  *
  */
 
