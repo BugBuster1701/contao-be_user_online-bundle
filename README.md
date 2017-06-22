@@ -6,6 +6,14 @@
 ## About
 Shows in backend the online status of the backend and frontend users.
 
+
+## Installation
+
+Installation Guide (EN): [INSTALLATION_EN.md](INSTALLATION_EN.md)
+
+Installationsanleitung (DE): [INSTALLATION_DE.md](INSTALLATION_DE.md)
+
+
 ## For Translators
 Translations are managed using Transifex. To create a new translation or to help to maintain an existing one, please register at transifex.com.
 
