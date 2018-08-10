@@ -1,11 +1,11 @@
 <?php 
 
 /**
- * Contao Open Source CMS, Copyright (C) 2005-2017 Leo Feyer
+ * Contao Open Source CMS, Copyright (C) 2005-2018 Leo Feyer
  *
  * Module Backend User Online - DCA Helper Class DcaMemberOnlineIcon
  *
- * @copyright  Glen Langer 2012..2017 <http://contao.ninja>
+ * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  * @package    BackendUserOnline 
  * @license    LGPL
@@ -21,7 +21,7 @@ namespace BugBuster\BackendUserOnline;
 /**
  * Class DcaMemberOnlineIcon
  *
- * @copyright  Glen Langer 2012..2017 <http://contao.ninja>
+ * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  * @package    BackendUserOnline
  */
@@ -52,7 +52,7 @@ class DcaMemberOnlineIcon extends \Backend
 		                    ->prepare("SELECT 
                                             tlm.id 
                                         FROM 
-		                                    tl_member tlm, tl_session tls 
+		                                    tl_member tlm, tl_beuseronline_session tls 
                                         WHERE 
 		                                    tlm.id = tls.pid 
                                         AND tlm.id = ? 
