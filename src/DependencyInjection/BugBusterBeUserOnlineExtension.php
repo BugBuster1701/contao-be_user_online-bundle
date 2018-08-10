@@ -9,7 +9,7 @@
  *
  */
 
-namespace Contao\BeUserOnlineBundle\DependencyInjection;
+namespace BugBuster\BeUserOnlineBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
