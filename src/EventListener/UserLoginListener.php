@@ -14,12 +14,6 @@ class UserLoginListener
      */
     private $framework;
 
-    /**
-     * Authentication hash
-     * @var string
-     */
-    protected $strHash;
-    
 
     /**
      * Contructor 
@@ -38,24 +32,34 @@ class UserLoginListener
      */
     public function onSetUserLogin(User $user)
     {
+        $intUserId = $user->getData()['id']; // for user id, ugly, but I don't know what's better.
         $this->framework->initialize();
         $time = time();
-        // Generate the cookie hash
-        $this->strHash = sha1(session_id() . (!\Config::get('disableIpCheck') ? $user->strIp : '') . $user->strCookie);
+        $strHash = '';
         
-        if ( ($user instanceof FrontendUser) || ($user instanceof BackendUser) ) 
+        // Generate the cookie hash
+
+        if ($user instanceof FrontendUser)
         {
-            // Do something with the front end user $user
-            
-            // Clean up old sessions
-            \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE tstamp<? OR hash=?")
-                                    ->execute( ($time - \Config::get('sessionTimeout')), $this->strHash );
-            
-            // Save the session in the database
-            \Database::getInstance()->prepare("INSERT INTO tl_beuseronline_session (pid, tstamp, name, hash) VALUES (?, ?, ?, ?)")
-                                    ->execute($user->intId, $time, $user->strCookie, $this->strHash);
-            
+            $strCookie = 'FE_USER_AUTH';
         }
+        
+        if ($user instanceof BackendUser)
+        {
+            $strCookie = 'BE_USER_AUTH';
+        }
+        $token = $_COOKIE["csrf_contao_csrf_token"];
+        //$session = \System::getContainer()->get('session');
+        $strHash = sha1($token.$strCookie);
+        
+        // Clean up old sessions
+        \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE tstamp<? OR hash=?")
+                                ->execute( ($time - \Config::get('sessionTimeout')), $strHash );
+        
+        // Save the session in the database
+        \Database::getInstance()->prepare("INSERT INTO tl_beuseronline_session (pid, tstamp, name, hash) VALUES (?, ?, ?, ?)")
+                                ->execute($intUserId, $time, $strCookie, $strHash);
+        
 
         //use app_dev.php to dump
         //dump from Symfony\Component\VarDumper\VarDumper

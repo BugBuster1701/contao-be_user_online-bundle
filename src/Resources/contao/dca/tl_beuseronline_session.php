@@ -29,7 +29,7 @@ $GLOBALS['TL_DCA']['tl_beuseronline_session'] = array
 			(
 				'id' => 'primary',
 				'pid' => 'index',
-				'hash' => 'unique'
+				'hash' => 'index'
 			)
 		)
 	),

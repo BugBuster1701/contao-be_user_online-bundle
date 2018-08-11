@@ -34,18 +34,28 @@ class UserLogoutListener
     public function onSetUserLogout(User $user)
     {
         $this->framework->initialize();
-
-        // Generate the cookie hash
-        $this->strHash = sha1(session_id() . (!\Config::get('disableIpCheck') ? $user->strIp : '') . $user->strCookie);
+        $strHash = '';
         
-        if ( ($user instanceof FrontendUser) || ($user instanceof BackendUser) ) 
+        // Generate the cookie hash
+        
+        if ($user instanceof FrontendUser)
         {
-            // Do something with the front end user $user
-
-            // Remove the session from the database
-            \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE hash=?")
-                                    ->execute($this->strHash);
+            $strCookie = 'FE_USER_AUTH';
         }
+        
+        if ($user instanceof BackendUser)
+        {
+            $strCookie = 'BE_USER_AUTH';
+        }
+        // Generate the cookie hash
+        //$session = \System::getContainer()->get('session');
+        $token = $_COOKIE["csrf_contao_csrf_token"];
+        $strHash = sha1($token.$strCookie);
+        
+        // Remove the session from the database
+        \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE hash=? ORDER BY tstamp")
+                                ->limit(1)
+                                ->execute($strHash);
                 
         //use app_dev.php to dump
         //dump from Symfony\Component\VarDumper\VarDumper
