@@ -14,6 +14,13 @@ class UserLogoutListener
      */
     private $framework;
 
+    /**
+     * Authentication hash
+     * @var string
+     */
+    protected $strHash;
+    
+    
     public function __construct(ContaoFrameworkInterface $framework)
     {
         $this->framework = $framework;
@@ -27,16 +34,19 @@ class UserLogoutListener
     public function onSetUserLogout(User $user)
     {
         $this->framework->initialize();
+
+        // Generate the cookie hash
+        $this->strHash = sha1(session_id() . (!\Config::get('disableIpCheck') ? $user->strIp : '') . $user->strCookie);
         
-        if ($user instanceof FrontendUser) {
+        if ( ($user instanceof FrontendUser) || ($user instanceof BackendUser) ) 
+        {
             // Do something with the front end user $user
-            dump('Hook UserLogout Frontend');
+
+            // Remove the session from the database
+            \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE hash=?")
+                                    ->execute($this->strHash);
         }
-        if ($user instanceof BackendUser) {
-            // Do something with the back end user $user
-            dump('Hook UserLogout Backend');
-        }
-        
+                
         //use app_dev.php to dump
         //dump from Symfony\Component\VarDumper\VarDumper
         //dump($arrModules['content']['modules']);

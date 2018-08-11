@@ -28,7 +28,8 @@ $GLOBALS['TL_DCA']['tl_beuseronline_session'] = array
 			'keys' => array
 			(
 				'id' => 'primary',
-				'pid' => 'index'
+				'pid' => 'index',
+				'hash' => 'unique'
 			)
 		)
 	),
@@ -51,6 +52,10 @@ $GLOBALS['TL_DCA']['tl_beuseronline_session'] = array
 		'name' => array
 		(
 			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'hash' => array
+		(
+			'sql'                     => "varchar(40) NULL"
 		)
 	)
 );
