@@ -33,10 +33,9 @@ class UserLogoutListener
      */
     public function onSetUserLogout(User $user)
     {
-        $this->framework->initialize();
+        $intUserId = $user->getData()['id']; // for user id, ugly, but I don't know what's better.
+        //$this->framework->initialize();
         $strHash = '';
-        
-        // Generate the cookie hash
         
         if ($user instanceof FrontendUser)
         {
@@ -48,14 +47,13 @@ class UserLogoutListener
             $strCookie = 'BE_USER_AUTH';
         }
         // Generate the cookie hash
-        //$session = \System::getContainer()->get('session');
         $token = $_COOKIE["csrf_contao_csrf_token"];
         $strHash = sha1($token.$strCookie);
         
-        // Remove the session from the database
-        \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE hash=? ORDER BY tstamp")
+        // Remove the oldest session for the hash from the database
+        \Database::getInstance()->prepare("DELETE FROM tl_beuseronline_session WHERE pid=? AND hash=? ORDER BY tstamp")
                                 ->limit(1)
-                                ->execute($strHash);
+                                ->execute($intUserId, $strHash);
                 
         //use app_dev.php to dump
         //dump from Symfony\Component\VarDumper\VarDumper

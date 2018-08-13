@@ -7,3 +7,7 @@ services:
         class: "BugBuster\\BeUserOnlineBundle\\EventListener\\UserLogoutListener"
         arguments:
             - "@contao.framework"
+    bugbuster_beuseronline.user_authenticate_listener:
+        class: "BugBuster\\BeUserOnlineBundle\\EventListener\\UserAuthenticateListener"
+        arguments:
+            - "@contao.framework"
