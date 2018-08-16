@@ -53,7 +53,7 @@ class UserAuthenticateListener
         $strHash = sha1($token.$strCookie);
         
         // Update session
-        \Database::getInstance()->prepare("UPDATE tl_session SET tstamp=$time WHERE pid=? AND hash=?")
+        \Database::getInstance()->prepare("UPDATE tl_beuseronline_session SET tstamp=$time WHERE pid=? AND hash=?")
                                 ->execute($intUserId, $strHash);
                 
         //use app_dev.php to dump
