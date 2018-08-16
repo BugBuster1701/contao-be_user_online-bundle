@@ -2,7 +2,6 @@
 
 namespace BugBuster\BeUserOnlineBundle\EventListener;
 
-use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
 use Contao\FrontendUser;
 use Contao\BackendUser;
 use Contao\User;
@@ -21,9 +20,9 @@ class UserLogoutListener
     protected $strHash;
     
     
-    public function __construct(ContaoFrameworkInterface $framework)
+    public function __construct()
     {
-        $this->framework = $framework;
+        
     }
 
     /**
@@ -34,7 +33,7 @@ class UserLogoutListener
     public function onSetUserLogout(User $user)
     {
         $intUserId = $user->getData()['id']; // for user id, ugly, but I don't know what's better.
-        //$this->framework->initialize();
+
         $strHash = '';
         
         if ($user instanceof FrontendUser)
