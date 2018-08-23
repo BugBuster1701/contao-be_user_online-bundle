@@ -7,6 +7,10 @@
 Shows in backend the online status of the backend and frontend users.
 
 
+## Notice
+For Contao 4.3 or 4.4 please install version 1.x.y, for Contao 4.5 and later version 2.x.y.
+
+
 ## Installation
 
 Installation Guide (EN): [INSTALLATION_EN.md](INSTALLATION_EN.md)

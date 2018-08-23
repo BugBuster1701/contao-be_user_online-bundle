@@ -9,6 +9,7 @@ There are two types of installation.
 ## Installation with Contao-Manager
 
 * search for package: `bugbuster/contao-be_user_online-bundle`
+* on version enter "^2.0".
 * install the package
 * Click on "Install Tool"
 * Login and update the database
@@ -18,6 +19,6 @@ There are two types of installation.
 
 Installation in a Composer-based Contao 4.5+ Managed-Edition:
 
-* `composer require "bugbuster/contao-be_user_online-bundle"`
+* `composer require "bugbuster/contao-be_user_online-bundle:^2.0"`
 * Call http://yourdomain/contao/install
 * Login and update the database
