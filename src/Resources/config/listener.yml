@@ -1,4 +1,7 @@
 services:
+    _defaults:
+        public: true
+
     bugbuster_beuseronline.user_login_listener:
         class: "BugBuster\\BeUserOnlineBundle\\EventListener\\UserLoginListener"
         arguments:
