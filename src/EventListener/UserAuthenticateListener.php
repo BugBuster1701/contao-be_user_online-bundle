@@ -49,15 +49,13 @@ class UserAuthenticateListener
         }
         
         // Generate the cookie hash
-        //$token = $_COOKIE["csrf_contao_csrf_token"];
         $container = System::getContainer();
         $token = $container->get('contao.csrf.token_manager')
                            ->getToken($container->getParameter('contao.csrf_token_name'))
                            ->getValue();
-
         $token = json_encode($token);
+
         $strHash = sha1($token.$strCookie);
-        dump($token); //TODO entfernen vor Deployment
         
         // Update session
         \Database::getInstance()->prepare("UPDATE tl_beuseronline_session SET tstamp=$time WHERE pid=? AND hash=?")
