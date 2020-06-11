@@ -7,6 +7,7 @@ use Contao\FrontendUser;
 use Contao\BackendUser;
 use Contao\User;
 use Contao\Config;
+use Contao\System;
 
 class UserLoginListener
 {
@@ -56,7 +57,14 @@ class UserLoginListener
         {
             $strCookie = 'BE_USER_AUTH';
         }
-        $token = $_COOKIE["csrf_contao_csrf_token"];
+        //$token = $_COOKIE["csrf_contao_csrf_token"];
+        $container = System::getContainer();
+        $token = $container->get('contao.csrf.token_manager')
+                           ->getToken($container->getParameter('contao.csrf_token_name'))
+                           ->getValue();
+
+        $token = json_encode($token);
+        dump($token); //TODO entfernen vor Deployment
         $strHash = sha1($token.$strCookie);
         
         // Clean up old sessions

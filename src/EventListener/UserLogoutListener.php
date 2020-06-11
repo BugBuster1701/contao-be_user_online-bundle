@@ -5,6 +5,7 @@ namespace BugBuster\BeUserOnlineBundle\EventListener;
 use Contao\FrontendUser;
 use Contao\BackendUser;
 use Contao\User;
+use Contao\System;
 
 class UserLogoutListener
 {
@@ -46,7 +47,14 @@ class UserLogoutListener
             $strCookie = 'BE_USER_AUTH';
         }
         // Generate the cookie hash
-        $token = $_COOKIE["csrf_contao_csrf_token"];
+        //$token = $_COOKIE["csrf_contao_csrf_token"];
+        $container = System::getContainer();
+        $token = $container->get('contao.csrf.token_manager')
+                           ->getToken($container->getParameter('contao.csrf_token_name'))
+                           ->getValue();
+
+        $token = json_encode($token);
+        dump($token); //TODO entfernen vor Deployment
         $strHash = sha1($token.$strCookie);
         
         // Remove the oldest session for the hash from the database
