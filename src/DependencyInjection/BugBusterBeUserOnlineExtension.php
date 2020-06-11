@@ -1,12 +1,15 @@
 <?php
 
-/**
- * @copyright  Glen Langer 2008..2018 <http://contao.ninja>
- * @author     Glen Langer (BugBuster)
- * @package    BeUserOnlineBundle
- * @license    LGPL-3.0+
- * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle
+declare(strict_types=1);
+
+/*
+ * This file is part of a BugBuster Contao Bundle
  *
+ * @copyright  Glen Langer 2020 <http://contao.ninja>
+ * @author     Glen Langer (BugBuster)
+ * @package    BackendUserOnline
+ * @license    LGPL-3.0-or-later
+ * @see        https://github.com/BugBuster1701/contao-be_user_online-bundle
  */
 
 namespace BugBuster\BeUserOnlineBundle\DependencyInjection;
@@ -21,7 +24,7 @@ class BugBusterBeUserOnlineExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $mergedConfig, ContainerBuilder $container)
+    public function load(array $mergedConfig, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
             $container,

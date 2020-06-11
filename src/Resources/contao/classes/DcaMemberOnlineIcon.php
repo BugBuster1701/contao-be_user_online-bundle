@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Contao Open Source CMS, Copyright (C) 2005-2018 Leo Feyer
@@ -7,7 +7,6 @@
  *
  * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @package    BackendUserOnline 
  * @license    LGPL
  * @filesource
  * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle 
@@ -16,6 +15,7 @@
 /**
  * Run in a custom namespace, so the class can be replaced
  */
+
 namespace BugBuster\BackendUserOnline;
 
 /**
@@ -23,18 +23,17 @@ namespace BugBuster\BackendUserOnline;
  *
  * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @package    BackendUserOnline
  */
 class DcaMemberOnlineIcon extends \Backend
 {
-    /**
-     * Add an image to each record
-     * @param array
-     * @param string
-     * @param DataContainer
-     * @param array
-     * @return string
-     */
+	/**
+	 * Add an image to each record
+	 * @param array
+	 * @param string
+	 * @param DataContainer
+	 * @param array
+	 * @return string
+	 */
 	public function addIcon($row, $label, \DataContainer $dc, $args)
 	{
 		$image = 'member';
@@ -47,7 +46,7 @@ class DcaMemberOnlineIcon extends \Backend
 		{
 			$image .= '_';
 		}
-		
+
 		$objUsers = \Database::getInstance()
 		                    ->prepare("SELECT 
                                             tlm.id 
@@ -71,7 +70,7 @@ class DcaMemberOnlineIcon extends \Backend
 		}
 
 		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/icons/%s.svg\'); width: 34px;" data-icon="%s.svg" data-icon-disabled="%s.svg">%s</div>', TL_ASSETS_URL, \Backend::getTheme(), $image, $disabled ? $image : rtrim($image, '_'), rtrim($image, '_') . '_', $status);
-		
+
 		return $args;
 	}
 
