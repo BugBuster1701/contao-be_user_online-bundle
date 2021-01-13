@@ -28,7 +28,7 @@ class UserAuthenticateListener
      */
     protected $strHash;
     /**
-     * @var ContaoFrameworkInterface
+     * @var ContaoFramework
      */
     private $framework;
 

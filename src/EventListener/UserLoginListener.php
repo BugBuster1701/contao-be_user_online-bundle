@@ -16,7 +16,7 @@ namespace BugBuster\BeUserOnlineBundle\EventListener;
 
 use Contao\BackendUser;
 use Contao\Config;
-use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
+use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\FrontendUser;
 use Contao\System;
 use Contao\User;
@@ -31,7 +31,7 @@ class UserLoginListener
     /**
      * Contructor.
      */
-    public function __construct(ContaoFrameworkInterface $framework)
+    public function __construct(ContaoFramework $framework)
     {
         $this->framework = $framework;
     }
