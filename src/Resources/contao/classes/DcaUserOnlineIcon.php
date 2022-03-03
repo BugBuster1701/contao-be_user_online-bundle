@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Contao Open Source CMS, Copyright (C) 2005-2018 Leo Feyer
+ * Contao Open Source CMS, Copyright (C) 2005-2022 Leo Feyer
  *
  * Module Backend User Online - DCA Helper Class DcaUserOnlineIcon
  *
- * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
+ * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  * @license    LGPL
  * @filesource
@@ -21,7 +21,7 @@ namespace BugBuster\BackendUserOnline;
 /**
  * Class DcaUserOnlineIcon 
  *
- * @copyright  Glen Langer 2012..2018 <http://contao.ninja>
+ * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  */
 class DcaUserOnlineIcon extends \Backend
