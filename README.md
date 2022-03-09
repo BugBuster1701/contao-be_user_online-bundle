@@ -1,6 +1,10 @@
 # Contao 4 Extension Backend User Online 
 
-[![Latest Stable Version](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/v/stable.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) [![Total Downloads](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/downloads.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) [![Latest Unstable Version](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/v/unstable.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) [![License](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/license.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle)
+[![Latest Stable Version](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/v/stable.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) 
+![Contao Version](https://img.shields.io/badge/Contao-4.13-orange)
+[![Total Downloads](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/downloads.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) 
+[![Latest Unstable Version](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/v/unstable.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) 
+[![License](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/license.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle)
 
 
 ## About
