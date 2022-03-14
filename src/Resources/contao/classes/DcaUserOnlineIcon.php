@@ -55,7 +55,7 @@ class DcaUserOnlineIcon extends \Backend
                                             tlu.id = tls.pid 
                                         AND tlu.id = ? 
                                         AND tls.tstamp > ? 
-                                        AND tls.name = ?")
+                                        AND tls.instanceof = ?")
                             ->execute($row['id'], time()-600, 'BE_USER_AUTH');
 		if ($objUsers->numRows < 1) 
 		{

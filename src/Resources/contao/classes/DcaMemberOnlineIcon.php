@@ -56,7 +56,7 @@ class DcaMemberOnlineIcon extends \Backend
 		                                    tlm.id = tls.pid 
                                         AND tlm.id = ? 
                                         AND tls.tstamp > ? 
-                                        AND tls.name = ?")
+                                        AND tls.instanceof = ?")
                             ->execute($row['id'], time()-300, 'FE_USER_AUTH');
 		if ($objUsers->numRows < 1) 
 		{
