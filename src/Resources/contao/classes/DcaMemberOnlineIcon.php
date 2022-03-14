@@ -51,7 +51,7 @@ class DcaMemberOnlineIcon extends \Backend
 		                    ->prepare("SELECT 
                                             tlm.id 
                                         FROM 
-		                                    tl_member tlm, tl_beuseronline_session tls 
+		                                    tl_member tlm, tl_online_session tls 
                                         WHERE 
 		                                    tlm.id = tls.pid 
                                         AND tlm.id = ? 

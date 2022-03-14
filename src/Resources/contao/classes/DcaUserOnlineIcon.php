@@ -50,7 +50,7 @@ class DcaUserOnlineIcon extends \Backend
 		$objUsers = \Database::getInstance()
                             ->prepare("SELECT tlu.id 
                                         FROM 
-                                            tl_user tlu, tl_beuseronline_session tls 
+                                            tl_user tlu, tl_online_session tls 
                                         WHERE 
                                             tlu.id = tls.pid 
                                         AND tlu.id = ? 
