@@ -17,7 +17,7 @@ Es gibt zwei Arten der Installation.
 
 ## Installation über die Kommandozeile
 
-Installation in einer Composer-basierenden Contao 4.5+ Managed-Edition:
+Installation in einer Composer-basierenden Contao 4.13 Managed-Edition:
 
 * `composer require "bugbuster/contao-be_user_online-bundle:^2.0"`
 * Aufruf https://deinedomain/contao/install
