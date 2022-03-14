@@ -21,7 +21,8 @@
 	},
 	"require":{
 		"php": "^7.4 || ^8.0",
-		"contao/core-bundle": "~4.13"
+		"contao/core-bundle": "~4.13",
+		"bugbuster/contao-online-bundle": "^1.2"
 	},
 	"require-dev": {
 			"contao/manager-plugin": "^2.0",
@@ -54,14 +55,8 @@
 				}
 		},
 		"branch-alias": {
-			"dev-develop": "2.1.x-dev"
+			"dev-develop": "2.3.x-dev"
 		},
 		"contao-manager-plugin": "BugBuster\\BeUserOnlineBundle\\ContaoManager\\Plugin"
-	},
-	"config": {
-		"allow-plugins": {
-			"contao-components/installer": true,
-			"contao/manager-plugin": true
-		}
 	}
 }
