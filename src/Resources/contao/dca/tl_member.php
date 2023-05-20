@@ -1,15 +1,13 @@
 <?php
 
-/**
- * Contao Open Source CMS, Copyright (C) 2005-2022 Leo Feyer
+/*
+ * This file is part of a BugBuster Contao Bundle (Resource/contao)
  *
- * Module Backend User Online - DCA 
- *
- * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
+ * @copyright  Glen Langer 2023 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @license    LGPL
- * @filesource
- * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle  
+ * @package    BackendUserOnline
+ * @license    LGPL-3.0-or-later
+ * @see        https://github.com/BugBuster1701/contao-be_user_online-bundle
  */
 
 /**
