@@ -1,22 +1,18 @@
 <?php
 
-/**
- * Contao Open Source CMS, Copyright (C) 2005-2022 Leo Feyer
+/*
+ * This file is part of a BugBuster Contao Bundle (Resource/contao)
  *
- * Module Backend User Online - DCA Helper Class DcaUserOnlineIcon
- *
- * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
+ * @copyright  Glen Langer 2023 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @license    LGPL
- * @filesource
- * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle  
- */
-
-/**
- * Run in a custom namespace, so the class can be replaced
+ * @package    BackendUserOnline
+ * @license    LGPL-3.0-or-later
+ * @see        https://github.com/BugBuster1701/contao-be_user_online-bundle
  */
 
 namespace BugBuster\BackendUserOnline;
+
+use Contao\Date;
 
 /**
  * Class DcaUserOnlineIcon 
@@ -24,7 +20,7 @@ namespace BugBuster\BackendUserOnline;
  * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  */
-class DcaUserOnlineIcon extends \Backend
+class DcaUserOnlineIcon extends \Contao\Backend
 {
 	/**
 	 * Add an image to each record
@@ -38,7 +34,7 @@ class DcaUserOnlineIcon extends \Backend
 	{
 		$image = $row['admin'] ? 'admin' : 'user';
 
-		$time = \Date::floorToMinute();
+		$time = Date::floorToMinute();
 
 		$disabled = $row['start'] !== '' && $row['start'] > $time || $row['stop'] !== '' && $row['stop'] < $time;
 
@@ -47,7 +43,7 @@ class DcaUserOnlineIcon extends \Backend
 			$image .= '_';
 		}
 
-		$objUsers = \Database::getInstance()
+		$objUsers = \Contao\Database::getInstance()
                             ->prepare("SELECT tlu.id 
                                         FROM 
                                             tl_user tlu, tl_online_session tls 

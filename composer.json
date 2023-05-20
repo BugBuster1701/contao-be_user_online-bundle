@@ -1,6 +1,6 @@
 {
 	"name":"bugbuster/contao-be_user_online-bundle",
-	"description":"Contao 4 CMS Online Status Icon for Backend and Frontend User",
+	"description":"Contao 5 CMS Online Status Icon for Backend and Frontend User",
 	"keywords":["contao","backend","user","online"],
 	"type":"contao-bundle",
 	"homepage":"http://contao.ninja",
@@ -16,13 +16,12 @@
 		"issues":"https://github.com/BugBuster1701/contao-be_user_online-bundle/issues",
 		"irc":"irc://irc.freenode.org/contao.dev",
 		"source":"https://github.com/BugBuster1701/contao-be_user_online-bundle",
-		"wiki":"http://de.contaowiki.org/Backend_User_Online",
 		"forum":"https://community.contao.org/de/forumdisplay.php?119-Sonstige-Erweiterungen"
 	},
 	"require":{
-		"php": "^7.4 || ^8.0",
-		"contao/core-bundle": "~4.13",
-		"bugbuster/contao-online-bundle": "^1.2"
+		"php": "^8.1",
+		"contao/core-bundle": "~5.1",
+		"bugbuster/contao-online-bundle": "^1.3"
 	},
 	"require-dev": {
 			"contao/manager-plugin": "^2.0",
@@ -58,5 +57,12 @@
 			"dev-develop": "2.3.x-dev"
 		},
 		"contao-manager-plugin": "BugBuster\\BeUserOnlineBundle\\ContaoManager\\Plugin"
+	},
+	"config": {
+		"allow-plugins": {
+			"php-http/discovery": true,
+			"contao-components/installer": true,
+			"contao/manager-plugin": true
+		}
 	}
 }

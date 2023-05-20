@@ -9,7 +9,7 @@ Es gibt zwei Arten der Installation.
 ## Installation über Contao-Manager
 
 * Suche das Paket: `bugbuster/contao-be_user_online-bundle`
-* Bei Version "^2.0" angeben.
+* Bei Version "^2.3" angeben.
 * Installation der Erweiterung
 * Klick auf "Install Tool"
 * Anmelden und Datenbank Update durchführen
@@ -17,8 +17,8 @@ Es gibt zwei Arten der Installation.
 
 ## Installation über die Kommandozeile
 
-Installation in einer Composer-basierenden Contao 4.13 Managed-Edition:
+Installation in einer Composer-basierenden Contao 5.1+ Managed-Edition:
 
-* `composer require "bugbuster/contao-be_user_online-bundle:^2.0"`
+* `composer require "bugbuster/contao-be_user_online-bundle:^2.3"`
 * Aufruf https://deinedomain/contao/install
 * Datenbank Update durchführen

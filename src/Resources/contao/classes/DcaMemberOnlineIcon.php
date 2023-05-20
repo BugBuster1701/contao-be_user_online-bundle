@@ -1,30 +1,26 @@
 <?php
 
-/**
- * Contao Open Source CMS, Copyright (C) 2005-2022 Leo Feyer
+/*
+ * This file is part of a BugBuster Contao Bundle (Resource/contao)
  *
- * Module Backend User Online - DCA Helper Class DcaMemberOnlineIcon
- *
- * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
+ * @copyright  Glen Langer 2023 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
- * @license    LGPL
- * @filesource
- * @see	       https://github.com/BugBuster1701/contao-be_user_online-bundle 
- */
-
-/**
- * Run in a custom namespace, so the class can be replaced
+ * @package    BackendUserOnline
+ * @license    LGPL-3.0-or-later
+ * @see        https://github.com/BugBuster1701/contao-be_user_online-bundle
  */
 
 namespace BugBuster\BackendUserOnline;
 
+use Contao\Date;
+
 /**
  * Class DcaMemberOnlineIcon
  *
- * @copyright  Glen Langer 2012..2022 <http://contao.ninja>
+ * @copyright  Glen Langer 2012..2023 <http://contao.ninja>
  * @author     Glen Langer (BugBuster)
  */
-class DcaMemberOnlineIcon extends \Backend
+class DcaMemberOnlineIcon extends \Contao\Backend
 {
 	/**
 	 * Add an image to each record
@@ -34,11 +30,11 @@ class DcaMemberOnlineIcon extends \Backend
 	 * @param array
 	 * @return string
 	 */
-	public function addIcon($row, $label, \DataContainer $dc, $args)
+	public function addIcon($row, $label, \Contao\DataContainer $dc, $args)
 	{
 		$image = 'member';
 
-		$time = \Date::floorToMinute();
+		$time = Date::floorToMinute();
 
 		$disabled = $row['start'] !== '' && $row['start'] > $time || $row['stop'] !== '' && $row['stop'] < $time;
 
@@ -47,7 +43,7 @@ class DcaMemberOnlineIcon extends \Backend
 			$image .= '_';
 		}
 
-		$objUsers = \Database::getInstance()
+		$objUsers = \Contao\Database::getInstance()
 		                    ->prepare("SELECT 
                                             tlm.id 
                                         FROM 
