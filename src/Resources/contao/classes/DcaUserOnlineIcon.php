@@ -30,7 +30,7 @@ class DcaUserOnlineIcon extends \Contao\Backend
 	 * @param array
 	 * @return string
 	 */
-	public function addIcon($row, $label, \DataContainer $dc, $args)
+	public function addIcon($row, $label, \Contao\DataContainer $dc, $args)
 	{
 		$image = $row['admin'] ? 'admin' : 'user';
 
