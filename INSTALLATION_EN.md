@@ -11,8 +11,6 @@ There are two types of installation.
 * search for package: `bugbuster/contao-be_user_online-bundle`
 * on version enter "^2.3".
 * install the package
-* Click on "Install Tool"
-* Login and update the database
 
 
 ## Installation via command line
@@ -20,5 +18,3 @@ There are two types of installation.
 Installation in a Composer-based Contao 5.1+ Managed-Edition:
 
 * `composer require "bugbuster/contao-be_user_online-bundle:^2.3"`
-* Call http://yourdomain/contao/install
-* Login and update the database
