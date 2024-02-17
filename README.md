@@ -1,4 +1,4 @@
-# Contao 5 Extension Backend User Online 
+# Contao 4/5 Extension Backend User Online 
 
 [![Latest Stable Version](https://poser.pugx.org/bugbuster/contao-be_user_online-bundle/v/stable.svg)](https://packagist.org/packages/bugbuster/contao-be_user_online-bundle) 
 ![Contao Version](https://img.shields.io/badge/Contao-5.1-orange) ![Contao Version](https://img.shields.io/badge/Contao-4.13-orange)
