@@ -3,7 +3,7 @@
 $header = <<<EOF
 This file is part of a BugBuster Contao Bundle
 
-@copyright  Glen Langer 2023 <http://contao.ninja>
+@copyright  Glen Langer 2024 <http://contao.ninja>
 @author     Glen Langer (BugBuster)
 @package    BackendUserOnline
 @license    LGPL-3.0-or-later
@@ -32,8 +32,8 @@ return $config
             'combine_consecutive_issets'                    => true,
             'combine_consecutive_unsets'                    => true,
             'comment_to_phpdoc'                             => true,
-            'compact_nullable_typehint'                     => true,
-            'escape_implicit_backslashes'                   => true,
+            'compact_nullable_type_declaration'             => true,
+            'string_implicit_backslashes'                   => true,
             'fully_qualified_strict_types'                  => true,
             // 'general_phpdoc_annotation_remove'              => [
             //     'author',
