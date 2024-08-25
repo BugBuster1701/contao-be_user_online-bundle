@@ -3,7 +3,7 @@
 $header = <<<EOF
 This file is part of a BugBuster Contao Bundle (Resource/contao)
 
-@copyright  Glen Langer 2023 <http://contao.ninja>
+@copyright  Glen Langer 2024 <http://contao.ninja>
 @author     Glen Langer (BugBuster)
 @package    BackendUserOnline
 @license    LGPL-3.0-or-later
@@ -30,10 +30,10 @@ return $config
         ],
         'cast_spaces' => true,
         'elseif' => true,
-        'escape_implicit_backslashes' => true,
+        'string_implicit_backslashes' => true,
         'function_declaration' => true,
-        'function_typehint_space' => true,
-        'header_comment'                                => ['header' => $header],
+        'type_declaration_spaces' => true,
+        'header_comment' => ['header' => $header],
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => true,
         'lowercase_keywords' => true,
@@ -44,7 +44,7 @@ return $config
         'native_function_invocation' => [
             'include' => ['@compiler_optimized'],
         ],
-        'new_with_braces' => true,
+        'new_with_parentheses' => true,
         'no_alternative_syntax' => true,
         'no_binary_string' => true,
         'no_empty_comment' => true,
@@ -59,10 +59,10 @@ return $config
         'no_short_bool_cast' => true,
         'no_singleline_whitespace_before_semicolons' => true,
         'no_spaces_around_offset' => true,
-        'no_spaces_inside_parenthesis' => true,
+        'spaces_inside_parentheses' => true, // false?
         'no_trailing_comma_in_singleline' => true,
         'no_unneeded_control_parentheses' => true,
-        'no_unneeded_curly_braces' => true,
+        'no_unneeded_braces' => true,
         'no_unreachable_default_argument_value' => true,
         'no_unused_imports' => false,
         'no_whitespace_before_comma_in_array' => true,
@@ -88,7 +88,7 @@ return $config
         'self_accessor' => true,
         'semicolon_after_instruction' => true,
         'short_scalar_cast' => true,
-        'single_blank_line_before_namespace' => true,
+        'blank_lines_before_namespace' => true,
         'single_class_element_per_statement' => true,
         'single_import_per_statement' => true,
         'single_line_comment_style' => true,
