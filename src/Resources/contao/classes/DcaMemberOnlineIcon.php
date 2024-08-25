@@ -16,9 +16,6 @@ use Contao\Date;
 
 /**
  * Class DcaMemberOnlineIcon
- *
- * @copyright  Glen Langer 2012..2023 <http://contao.ninja>
- * @author     Glen Langer (BugBuster)
  */
 class DcaMemberOnlineIcon extends \Contao\Backend
 {
