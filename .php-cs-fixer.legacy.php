@@ -3,7 +3,7 @@
 $header = <<<EOF
 This file is part of a BugBuster Contao Bundle (Resource/contao)
 
-@copyright  Glen Langer 2024 <http://contao.ninja>
+@copyright  Glen Langer 2026 <http://contao.ninja>
 @author     Glen Langer (BugBuster)
 @package    BackendUserOnline
 @license    LGPL-3.0-or-later
